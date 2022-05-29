@@ -93,6 +93,6 @@ Documentation can be found [here](https://docs.google.com/document/d/1REjqQN7qbH
 
 
 ### :point_right:	 Presentation :receipt::receipt::receipt:
-Documentation can be found [here]([https://docs.google.com/document/d/1REjqQN7qbH5l_CglM1tw-Q24cmVuz2DY5YAoGSE6kVo/edit?usp=sharing](https://docs.google.com/presentation/d/1MOycuwDXQUMybTCR6Mg1Vabyw2ALzvJ_3Z53aCRWceE/edit?usp=sharing)
+Documentation can be found [here](https://docs.google.com/presentation/d/1MOycuwDXQUMybTCR6Mg1Vabyw2ALzvJ_3Z53aCRWceE/edit?usp=sharing)
 
 
