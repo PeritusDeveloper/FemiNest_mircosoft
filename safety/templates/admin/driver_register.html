@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<!-- Head -->
+
+<head>
+    <title>Safety |Admin</title>
+    <!-- Meta-Tags -->
+	<meta name="language" content="English">
+  	<meta name="author" content="FemiNest">
+  	<link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Safety Woman FemiNest">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/login.css') }}" type="text/css"  media="all">
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <!-- //fonts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/font-awesome.min.css') }}" type="text/css" media="all">
+    <!-- //Font-Awesome-File-Links -->
+	
+	<!-- Google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
+	<!-- Google fonts -->
+
+</head>
+<!-- //Head -->
+<!-- Body -->
+
+<body>
+
+<section class="main">
+	<div class="layer">
+		
+		<div class="bottom-grid">
+			<div class="logo">
+			</div>
+		</div>
+		<div class="content-w3ls">
+			<div class="content-bottom">
+				<form action="" method="POST" autocomplete="off">
+                    {{ form.hidden_tag() }}
+					{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+
+					<div class="field-group">
+						<span class="fa fa-user" aria-hidden="true"></span>
+						<div class="wthree-field">
+                           
+                            {{ form.name(class="ipt",placeholder="Name") }}
+                        </div>
+                    </div>
+							{% if form.name.errors %}
+                            {% for error in form.name.errors %}
+                                <div class="error-msg">{{ error }}</div>
+                            {% endfor %}
+                            {% endif %}
+                            <div class="field-group">
+                                <span class="fa fa-phone" aria-hidden="true"></span>
+                                <div class="wthree-field">
+                                    {{ form.phone(class="ipt",placeholder="Mobile Number") }}
+                                </div>
+                            </div>
+                                    {% if form.phone.errors %}
+                                    {% for error in form.phone.errors %}
+                                        <div class="error-msg">{{ error }}</div>
+										{% endfor %}
+										{% endif %}
+										<div class="field-group">
+											<span class="fa fa-lock" aria-hidden="true"></span>
+											<div class="wthree-field">
+												{{ form.aadhar(class="ipt" ,placeholder="Aadhar Number") }}
+											</div>
+										</div>
+												{% if form.aadhar.errors %}
+												{% for error in form.aadhar.errors %}
+													<div class="error-msg">{{ error }}</div>
+												{% endfor %}
+												{% endif %}
+					<div class="field-group">
+						<span class="fa fa-taxi" aria-hidden="true"></span>
+						<div class="wthree-field">
+					
+                            {{ form.vehicle(class="ipt" ,placeholder="Vehicle number") }}
+						</div>
+					</div>
+                            {% if form.vehicle.errors %}
+                            {% for error in form.vehicle.errors %}
+                                <div class="error-msg">{{ error }}</div>
+                            {% endfor %}
+                            {% endif %}
+					<div class="wthree-field">
+                        {{ form.submit(class="btn") }}
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="bottom-grid1">
+			<div class="links">
+				<ul class="links-unordered-list">
+					<li class="">
+						<a href="#" class="">About Us</a>
+					</li>
+					<li class="">
+						<a href="#" class="">Privacy Policy</a>
+					</li>
+					<li class="">
+						<a href="#" class="">Terms of Use</a>
+					</li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<p>© 2022 FemiNest. All rights reserved | Design by
+					<a class="linking" href="https://www.linkedin.com/in/shraddha-basarikatti-001625231/">Shraddha</a>
+				</p>
+			</div>
+		</div>
+    </div>
+</section>
+
+</body>
+<!-- //Body -->
+</html>

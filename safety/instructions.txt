@@ -1,0 +1,10 @@
+flask shell
+
+
+flask db init
+
+flask db stamp head
+flask db migrate
+flask db upgrade
+
+https://stackoverflow.com/questions/17768940/target-database-is-not-up-to-date

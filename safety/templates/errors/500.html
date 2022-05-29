@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="language" content="English">
+    <meta name="author" content="FemiNest">
+    <link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>FemiNest - {{ title }}</title>
+{% else %}
+    <title>FemiNest</title>
+{% endif %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/error/error500.css') }}" type="text/css"  media="all">
+</head>
+<body>
+    <div class="full-screen">
+        <div class='container'>
+          <span class="error-num">5</span>
+          <div class='eye'></div>
+          <div class='eye'></div>
+  
+          <p class="sub-text">Something went wrong. We're <span class="italic">looking</span> to see what happened.</p>
+          {% if current_user.is_authenticated %}
+          <a href="{{url_for('main.home')}}">Go back</a>
+          {% else %}
+          <a href="{{url_for('user.login')}}">Go back</a>
+          {% endif %}
+        </div>
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+      <script>
+          
+          $(".full-screen").mousemove(function(event) {
+  var eye = $(".eye");
+  var x = (eye.offset().left) + (eye.width() / 2);
+  var y = (eye.offset().top) + (eye.height() / 2);
+  var rad = Math.atan2(event.pageX - x, event.pageY - y);
+  var rot = (rad * (180 / Math.PI) * -1) + 180;
+  eye.css({
+    '-webkit-transform': 'rotate(' + rot + 'deg)',
+    '-moz-transform': 'rotate(' + rot + 'deg)',
+    '-ms-transform': 'rotate(' + rot + 'deg)',
+    'transform': 'rotate(' + rot + 'deg)'
+  });
+});
+
+      </script>
+      
+</body>
+</html>

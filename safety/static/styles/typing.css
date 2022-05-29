@@ -1,0 +1,18 @@
+.auto-type-css{
+    width : 100%;
+    height: 20vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .auto-type-css h1
+  {
+    font-size: 80px;
+    font-weight: 600;
+  }
+  
+  span{
+    color : #e91e63;
+  }

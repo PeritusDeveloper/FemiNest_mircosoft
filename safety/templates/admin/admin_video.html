@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="language" content="English">
+    <meta name="author" content="FemiNest">
+    <link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/styles/video.css') }}">
+    <title>Document</title>
+  </head>
+  
+  <body>
+    <section>
+        <div id="particles-js"></div> 
+            <div class="box">
+                <div class="square" style="--i:0;"></div>
+                
+                <div class="square" style="--i:1;"></div>
+                <div class="square" style="--i:2;"></div>
+                <div class="square" style="--i:3;"></div>
+                <div class="square" style="--i:4;"></div>
+                <div class="square" style="--i:5;"></div>
+                <div class="container">
+                        <div class="mid">
+                            <h2>Scan the driver</h2>
+                            <img id="cam" src="{{ url_for('admin.admin_video_feed') }}">
+                        </div>
+                </div>
+            </div>
+    </section>
+      <script>
+
+            var intervalId = window.setInterval(function(){
+                $.getJSON('/admin/video/is_stored', function(data){
+                    if(data['is_stored'] == true) {
+                        var secret_id=data['id']
+                        clearInterval(intervalId);  // stop checking it
+                        console.log('Here?');
+                        window.location.href = "{{url_for('admin.driver_register_form',id='dummy')}}".replace("dummy",secret_id);
+                    }else if(data['is_stored']== 'Fail'){
+                        clearInterval(intervalId);
+                        window.location.href = "{{url_for('camera_capture.cam_error')}}";
+                    };
+                })
+            }, 500);  // 500ms = 0.5s 
+      </script>
+      <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+      <script src="{{url_for('static', filename='/js/jquery.min.js')}}"></script>
+  </body>
+</html>

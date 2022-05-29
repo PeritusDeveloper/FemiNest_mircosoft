@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="FemiNest is a helpful website that helps women to travel safely.">
+  <meta name="description" content="Today Women are reaching and fulling their dreams.
+  Apart from this her safety one of the major concern in today's world.">
+  <meta name="keywords" content="Women,safety">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="FemiNest">
+  <link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+    <title>FemiNest | Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/profile.css') }}" type="text/css" media="all">
+</head>
+<body>
+    <aside class="profile-card">
+        <header>
+          <!-- here’s the avatar -->
+          <a target="_blank" href="">
+            <img src="/static/images/profile_img.jpg" class="hoverZoomLink">
+          </a>
+      
+          <!-- the username -->
+          <h1>
+            @{{current_user.username}}
+          </h1>
+      
+          <!-- and role or location -->
+          <h2>
+           {{current_user.email}}
+          </h2>
+      
+        </header>
+      
+        <!-- bit of a bio; who are you? -->
+        <div class="profile-bio">
+      
+          <p>
+            A strong woman knows she has strength enough for the journey, but a woman of strength knows it is in the journey where she will become strong.
+          </p>
+          
+          <div class="buttons">
+              <a href="{{url_for('main.home')}}">
+                  <button class="primary">
+                  Home
+              </button>
+          </a>
+          </div>
+        </div>
+      
+        <!-- some social links to show off -->
+        <!-- <ul class="profile-social-links">
+          <li>
+            <a target="_blank" href="https://www.facebook.com/creativedonut">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://twitter.com/dropyourbass">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/vipulsaxena">
+              <i class="fa fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.behance.net/vipulsaxena">
+      
+              <i class="fa fa-behance"></i>
+            </a>
+          </li>
+        </ul> -->
+      </aside>
+    
+</body>
+</html>

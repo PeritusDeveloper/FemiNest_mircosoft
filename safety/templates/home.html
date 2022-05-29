@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="FemiNest is a helpful website that helps women to travel safely.">
+  <meta name="description" content="Today Women are reaching and fulling their dreams.
+  Apart from this her safety one of the major concern in today's world.">
+  <meta name="keywords" content="Women,safety">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="FemiNest">
+  <link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+  <title>FemiNest| Home</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='/styles/about.css') }}" type="text/css" media="all">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/styles/typing.css') }}" type="text/css" media="all">
+
+  <!-- Adding new font -> Playfair-display -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!--Adding AOS in it-->
+  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="body-style">
+  <!-- <div class="preloader">
+    <div class="loader"></div>
+  </div> -->
+  <div class="bubbles">
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+    <img src="/static/images/bubble.png" />
+
+  </div>
+
+  <div id="topBtn" title="Go to Top">
+    <a href="#"><span class="fa fa-angle-up"></span></a>
+  </div>
+
+  <!-- Navbar started -->
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand mx-auto feminest-title" href="{{url_for('main.home')}}">FemiNest<img src="/static/images/FemiNest_logo.png" alt="FemiNest Logo"
+        class="logo-img" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        {% if current_user.is_authenticated %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('main.home')}}"><i class="fas fa-home"></i> Home
+            <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('camera_capture.video_capture')}}" class="nav-link">
+            <i class="fas fa-camera"></i> Scan
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('main.contact')}}" class="nav-link">
+            <i class="fa fa-address-book"></i> Contact
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('users.logout')}}" class="nav-link">
+            <i class="fa fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('main.profile')}}" class="nav-link">
+            <i class="fa fa-user-circle"></i> Profile
+          </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="{{url_for('users.login')}}" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('users.register')}}" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i> Sign up
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+      
+    </div>
+  </nav>
+  <!-- Navbar ended -->
+
+  <!-- Home content started -->
+  <div class="auto-type-css text-center">
+    <h1>
+        I'm <span class = "auto-type"></span> 
+    </h1>
+</div>
+  <div class="about-container" data-aos="fade-up">
+    <!-- <div class="my-5"> -->
+    <h1 class="text-center">Women's Safety</h1>
+    <div class="py-3 mx-md-5 mx-3">
+      <p>
+        In Today's developing world women are reaching to the skies in achieving their dream.
+        They are progressively making the attempts to be successful in all the fields.
+        At the same time their is a major concern of their security but in today's ever changing technology
+        we are successfully able to safegaurd her and support her to accomplish her dream 
+        One such attempt I have made is to safely reach her home when she travels alone.
+      </p>
+      <h2 class="text-white">
+        <strong>Why to use FemiNest</strong>
+      </h2>
+      <p>
+        This web browser application focuses on scaning the driver and sending the information to the family members 
+        of the user so that they are in relief that she is travelling safely.
+        This is very easy to use.
+
+      </p>
+      <h2 class="text-white">
+        <strong>Features of FemiNest </strong>
+      </h2>
+      <p>
+        <i class="far fa-hand-point-right"></i> Female Security when she travels alone.<br>
+        <i class="far fa-hand-point-right"></i> Scans the driver and sends his information to her family members.<br>
+        <i class="far fa-hand-point-right"></i> Easy to use.<br>
+        <i class="far fa-hand-point-right"></i> Convinent for all.<br>
+        <!-- <i class="far fa-hand-point-right"></i> For late returns, automatic fine calculation is available.<br>
+        <i class="far fa-hand-point-right"></i> A book can be searched using different criteria.<br>
+        <i class="far fa-hand-point-right"></i> Number of books, number of books issued, number of journals, etc.<br>
+        <i class="far fa-hand-point-right"></i> A simple way to see how many books a student has received. -->
+      </p>
+    </div>
+
+     <div align="center">
+      <a href="https://github.com/PeritusDeveloper"></a> 
+     </div>
+
+    <br>
+  </div>
+
+  <!-- about content ended -->
+
+  <!-- footer started -->
+  <!-- <div class="page-wrapper">
+    <div id="waterdrop"></div>
+    <footer>
+      <div class="footer-top">
+        <div class="pt-exebar">
+  
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
+              <div class="widget footer_widget">
+                <h5 class="footer-title">Address</h5>
+                <div class="gem-contacts">
+                  <div class="gem-contacts-item gem-contacts-address">Corporate Office :<br> Doon House, B-275(A), First floor
+                    Sector-57, Shushant Lok 3
+                    Near Hong Kong Bazzar, Gurugram Pin 122001, Haryana.
+                  </div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">+91-9122588799</a></div>
+  
+                  <div class="gem-contacts-item gem-contacts-address mt-2">Reg. Office :<br> Doon House, D2/3,
+                    4th Floor, Chandra Tower, IDBI Bank Building
+                    Dimna Road, Mango, Jamshedpur-831012, Jharkhand.</div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>+91 9122588799</a></div>
+  
+                </div>
+              </div>
+  
+            </div>
+            <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget footer_widget">
+                    <h5 class="footer-title">Recent News</h5>
+                    <ul class="posts  styled">
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">Want to start Your Own Play School.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">Call +91-9122588799</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">Now we are in Faridabad,Now we are in DaudNagar.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">Call +91-9122588799, +91-9122588799</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="">Now we are in Ranchi, Admission open
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">Call +91-9122588799, +91-9122588799</div>
+                        </div>
+                      </li>
+  
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget">
+                    <h5 class="footer-title">Email Us</h5>
+                    <div class="textwidget">
+                      <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
+  
+                        <form method="post" class="wpcf7-form" novalidate="novalidate">
+  
+                          <div class="contact-form-footer">
+                            <p><span class="wpcf7-form-control-wrap your-first-name"><input type="text" name="your-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Your name"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
+                            <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+              <div class="widget widget_gallery gallery-grid-4">
+                <h5 class="footer-title">Our Gallery</h5>
+                <ul class="magnific-image">
+  
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-md-3">
+              <div class="footer-site-info">2020 © <a href="https://www.youtube.com/watch?v=pdr4IzBpacI&t=34s" target="_blank">Top HTML & CSS Program </a></div>
+            </div>
+  
+            <div class="col-md-6">
+              <nav id="footer-navigation" class="site-navigation footer-navigation centered-box" role="navigation">
+                <ul id="footer-menu" class="nav-menu styled clearfix inline-inside">
+                  <li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="#">Support</a></li>
+                  <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="#">Contact Us</a></li>
+                  <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="#">Disclaimer</a></li>
+                  <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29"><a href="#">Add more</a></li>
+                </ul>
+              </nav>
+            </div>
+  
+            <div class="col-md-3">
+              <div id="footer-socials">
+                <div class="socials inline-inside socials-colored">
+  
+                  <a href="#" target="_blank" title="Facebook" class="socials-item">
+                    <i class="fab fa-facebook-f facebook"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Twitter" class="socials-item">
+                    <i class="fab fa-twitter twitter"></i>
+  
+                  </a>
+                  <a href="#" target="_blank" title="Instagram" class="socials-item">
+                    <i class="fab fa-instagram instagram"></i>
+                  </a>
+                  <a href="#" target="_blank" title="YouTube" class="socials-item">
+                    <i class="fab fa-youtube youtube"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Telegram" class="socials-item">
+                    <i class="fab fa-telegram telegram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
+  
+  <script>
+    jQuery('#waterdrop').raindrops({
+      color: '#1c1f2f',
+      canvasHeight: 150,
+      density: 0.1,
+      frequency: 20
+    });
+  </script> -->
+  <div>
+    <footer>
+    
+      <div class="footer-wrapper">
+      <div class ="container">
+        <div class ="row">
+          <div class ="footer-col quickcenter">
+            </div>
+            </div>
+        <div class="footer-col">
+          <h4 style="color: rgb(247, 241, 247);" class="address">Address</h4>
+          <div class="content">
+            <div class="place">
+          <span class="fas fa-map-marker-alt" style="color: rgb(247, 241, 247);"></span>
+          <span class="text" style="color: rgb(247, 241, 247);">L-Block Sawant Vihar,Katraj,Pune,Maharashtra,India</span>
+            </div>
+          </div>
+          <div class="phone">
+            <span class="fas fa-phone-alt" style="color: rgb(247, 241, 247);"></span>
+            <span class="text" style="color: rgb(247, 241, 247);">9421106950</span>
+          </div>
+          <div class="email">
+            <span class="fas fa-envelope" style="color: rgb(247, 241, 247);"></span>
+            <span class="text" style="color: rgb(247, 241, 247);">contact@example.com</span>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="footer-wrapper">
+        <div class="icons">
+
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/shraddha-basarikatti-001625231/"><i class="fab fa-lg fa-linkedin-in icon"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/PeritusDeveloper" target="github"> <i class="fab fa-lg fa-github icon"></i> </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+
+          <p style="color: pink;">&#169 2022 FemiNest </p>
+        </div>
+        
+    </footer>
+
+  </div>
+  <!-- footer ended -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <!-- Go to Top  -->
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 40) {
+          $("#topBtn").css({
+            opacity: "1",
+            "pointer-events": "auto",
+          });
+        } else {
+          $("#topBtn").css({
+            opacity: "0",
+            "pointer-events": "none",
+          });
+        }
+      });
+
+      $("#topBtn").click(function () {
+        $("html ,body").animate({
+          scrollTop: 0
+        }, 400);
+      });
+    });
+    $(window).on("scroll load resize", function(){
+  checkScroll();
+  console.log($(window).scrollTop());
+});
+function checkScroll(){
+  if($(window).scrollTop() > 330){
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        if (count < target) {
+          counter.innerText = count + 1;
+          setTimeout(updateCount, 8);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  } else {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      counter.innerText=0;
+    });
+  }
+}
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          offset: 400, // offset (in px) from the original trigger point
+          delay: 0, // values from 0 to 3000, with step 50ms
+          duration: 1000 // values from 0 to 3000, with step 50ms
+        });
+      </script>
+<script src="{{url_for('static', filename='/js/csn_jsdelivr.typed.js')}}"></script>
+
+<script>
+    var typed = new Typed(".auto-type", {
+        // change the strings/words to be typed here
+        strings : ["Empowered", "Strong", "Confident","Brave","Powerful","Courageous","Fearless","Unique","Bold"],
+        // change the typing speed in typedSpeed 
+        typedSpeed : 200,
+        // change the speed at which letters are erased in backspeed
+        backSpeed: 200,
+        loop: true
+    })
+</script>
+
+</body>
+
+</html>

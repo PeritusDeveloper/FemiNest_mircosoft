@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Safety Woman FemiNest">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/login.css') }}" type="text/css"  media="all">
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <!-- //fonts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/font-awesome.min.css') }}" type="text/css" media="all">
+    <!-- //Font-Awesome-File-Links -->
+	
+	<!-- Google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
+	<!-- Google fonts -->
+    {% if title %}
+        <title>FemiNest - {{ title }}</title>
+    {% else %}
+        <title>FemiNest</title>
+    {% endif %}
+</head>
+<body>
+  <section class="main">
+    <div class="layer">
+      <div class="bottom-grid">
+        <div class="logo">
+          <h1> <a href="{{url_for('users.login')}}"><span class="fa fa-key"></span> FemiNest</a></h1>
+        </div>
+        <div class="links">
+          <ul class="links-unordered-list">
+            {% if current_user.is_authenticated %}
+            <li class="active">
+              <a href="{{ url_for('users.login') }}" class="">Login</a>
+            </li>
+            <li class="">
+              <a href="{{ url_for('users.register') }}" class="">Register</a>
+            </li>
+            {% else %}
+            <li class="">
+              <a href="#" class="">Home</a>
+            </li>
+            <li class="">
+              <a href="#" class="">About Us</a>
+            </li>
+            <li class="">
+              <a href="#" class="">Contact</a>
+            </li>
+            <li class="">
+              <a href="#" class="">Profile</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+        <!-- <div class="col-md-4">
+          <div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

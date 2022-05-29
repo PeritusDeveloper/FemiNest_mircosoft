@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+
+<head>
+    <title>Safety |Register</title>
+    <!-- Meta-Tags -->
+	<meta name="language" content="English">
+  	<meta name="author" content="FemiNest">
+  	<link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Safety Woman FemiNest">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/login.css') }}" type="text/css"  media="all">
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <!-- //fonts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/font-awesome.min.css') }}" type="text/css" media="all">
+    <!-- //Font-Awesome-File-Links -->
+	
+	<!-- Google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
+	<!-- Google fonts -->
+
+</head>
+<!-- //Head -->
+<!-- Body -->
+
+<body>
+
+<section class="main">
+	<div class="layer">
+		
+		<div class="bottom-grid">
+			<div class="logo">
+				<h1> <a href="{{url_for('users.login')}}"><span class="fa fa-key"></span> FemiNest</a></h1>
+			</div>
+			<div class="links">
+				<ul class="links-unordered-list">
+					<li class="">
+						<a href="{{ url_for('users.login') }}" class="">Login</a>
+					</li>
+					<li class="active">
+						<a href="{{ url_for('users.register') }}" class="">Register</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content-w3ls">
+			<div class="content-bottom">
+				<form action="" method="POST" autocomplete="off">
+                    {{ form.hidden_tag() }}
+					{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+					<div class="field-group">
+						<span class="fa fa-user" aria-hidden="true"></span>
+						<div class="wthree-field">
+                            <!-- <input name="text1" id="text1" type="email" value="" placeholder="Email" required> -->
+                            {{ form.username(class="ipt",placeholder="Username") }}
+                        </div>
+                    </div>
+							{% if form.username.errors %}
+                            {% for error in form.username.errors %}
+                                <div class="error-msg">{{ error }}</div>
+                            {% endfor %}
+                            {% endif %}
+                            <div class="field-group">
+                                <span class="fa fa-envelope" aria-hidden="true"></span>
+                                <div class="wthree-field">
+                                    <!-- <input name="text1" id="text1" type="email" value="" placeholder="Email" required> -->
+                                    {{ form.email(class="ipt",placeholder="Email") }}
+                                </div>
+                            </div>
+                                    {% if form.email.errors %}
+                                    {% for error in form.email.errors %}
+                                        <div class="error-msg">{{ error }}</div>
+										{% endfor %}
+										{% endif %}
+										<div class="field-group">
+											<span class="fa fa-lock" aria-hidden="true"></span>
+											<div class="wthree-field">
+												<!-- <input name="password" id="myInput" type="Password" placeholder="Password"> -->
+												{{ form.password(class="ipt" ,placeholder="Password") }}
+											</div>
+										</div>
+												{% if form.password.errors %}
+												{% for error in form.password.errors %}
+													<div class="error-msg">{{ error }}</div>
+												{% endfor %}
+												{% endif %}
+					<div class="field-group">
+						<span class="fa fa-lock" aria-hidden="true"></span>
+						<div class="wthree-field">
+							<!-- <input name="password" id="myInput" type="Password" placeholder="Password"> -->
+                            {{ form.confirm_password(class="ipt" ,placeholder="Confirm Password") }}
+						</div>
+					</div>
+                            {% if form.confirm_password.errors %}
+                            {% for error in form.confirm_password.errors %}
+                                <div class="error-msg">{{ error }}</div>
+                            {% endfor %}
+                            {% endif %}
+					<div class="wthree-field">
+						<!-- <button type="submit" class="btn">Get Started</button> -->
+                        {{ form.submit(class="btn") }}
+					</div>
+					<ul class="list-login txt-center ">
+						<li>
+							<a href="{{ url_for('users.login') }}" class=" linking ">Already have an Account?</a>
+						</li>
+						<li class="clearfix"></li>
+					</ul>
+				</form>
+			</div>
+		</div>
+		<div class="bottom-grid1">
+			<div class="links">
+				<ul class="links-unordered-list">
+					<li class="">
+						<a href="#" class="">About Us</a>
+					</li>
+					<li class="">
+						<a href="#" class="">Privacy Policy</a>
+					</li>
+					<li class="">
+						<a href="#" class="">Terms of Use</a>
+					</li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<p>© 2022 FemiNest. All rights reserved | Design by
+					<a class="linking" href="https://www.linkedin.com/in/shraddha-basarikatti-001625231/">Shraddha</a>
+				</p>
+			</div>
+		</div>
+    </div>
+</section>
+
+</body>
+<!-- //Body -->
+</html>

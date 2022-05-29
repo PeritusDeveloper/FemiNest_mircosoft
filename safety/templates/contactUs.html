@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="English">
+    <meta name="author" content="FemiNest">
+    <link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FemiNest | ContactUs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/ContactUs.css') }}" type="text/css"  media="all">
+</head>
+<body>
+    <small>Enter message and click button "Send"</small>
+    <div class="wrapper centered">
+      <article class="letter">
+        <div class="side">
+          <h1>Contact us</h1>
+          <form action="" method="POST" autocomplete="off">
+            {{ form.hidden_tag() }}
+            <p>
+              {{ form.msg(placeholder="Your message") }}
+            </p>
+          </div>
+    <div class="side">
+        <p>
+          {{ form.name(placeholder="Name") }}
+        </p>
+        <p>
+          {{ form.email(placeholder="Email") }}
+        </p>
+        <p>
+          <!-- <button id="sendLetter">Send</button> -->
+          {{ form.submit(id="sendLetter",placeholder="Send") }}
+        </p>
+      </div>
+    </form>
+  </article>
+  <div class="envelope front"></div>
+  <div class="envelope back"></div>
+</div>
+<p class="result-message centered">Thank you for your message</p>
+</body>
+<script>
+    function addClass() {
+  document.body.classList.add("sent");
+}
+
+sendLetter.addEventListener("click", addClass);
+</script>
+</html>
+

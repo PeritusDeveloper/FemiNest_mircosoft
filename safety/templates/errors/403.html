@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta name="language" content="English">
+     <meta name="author" content="FemiNest">
+     <link rel="icon" href="/static/images/FemiNest_logo.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/error/error403.css') }}" type="text/css"  media="all">
+    {% if title %}
+    <title>FemiNest - {{ title }}</title>
+{% else %}
+    <title>FemiNest</title>
+{% endif %} 
+
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="bat">
+          <img class="wing leftwing" 
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+          <img class="body"
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-body.png" alt="bat">
+          <img class="wing rightwing"
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+        </div>
+        <div class="bat">
+          <img class="wing leftwing" 
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+          <img class="body"
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-body.png" alt="bat">
+          <img class="wing rightwing"
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+        </div>
+        <div class="bat">
+          <img class="wing leftwing" 
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+          <img class="body"
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-body.png" alt="bat">
+          <img class="wing rightwing"
+               src="https://www.blissfullemon.com/wp-content/uploads/2018/09/bat-wing.png">
+        </div>
+        <img class="foregroundimg" src="https://www.blissfullemon.com/wp-content/uploads/2018/09/HauntedHouseForeground.png" alt="haunted house">
+        
+      </div>
+      
+       <div class="info">
+          <h1 class="errorcode">ERROR 403</h1>
+          {% if current_user.is_authenticated %}
+        <p><div class="errortext">This area is forbidden. Turn <a class="linking" href="{{url_for('main.home')}}">back now!</div>
+        </p><a href="{{url_for('main.home')}}" rel="noreferrer noopener">Home</a>
+        {% else %}
+        <p><div class="errortext">This area is forbidden. Turn <a class="linking" href="{{url_for('users.login')}}">back now!</div>
+    {% endif %}
+    </div>
+      
+      
+
+</body>
+
+</html>
