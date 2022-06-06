@@ -89,7 +89,7 @@ This project uses the following packages and languages:
 9. Bootstrap
 
 ### :point_right:	 Documentation :receipt::receipt::receipt:
-Documentation can be found [here](https://docs.google.com/document/d/1REjqQN7qbH5l_CglM1tw-Q24cmVuz2DY5YAoGSE6kVo/edit?usp=sharing)
+Documentation can be found [here](https://docs.google.com/document/d/1b9OIx_o1nRHvkun8OYHOofOmQbRgLhs_RAoeRBHtVHw/edit?usp=sharing)
 
 
 ### :point_right:	 Presentation :receipt::receipt::receipt:
